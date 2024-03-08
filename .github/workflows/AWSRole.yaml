@@ -12,7 +12,7 @@ env:
   BUCKET: www.alleynmurphy.com
   AWS_REGION : "us-west-1" #Change to reflect your Region
   DIST_ID: E3RKI9S7WU1W15
-  DIST: index.html
+  DIST: .
 
   
 # Permission can be added at job level or workflow level    
