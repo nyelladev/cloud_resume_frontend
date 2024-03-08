@@ -9,9 +9,10 @@ on:
     branches: [ main ]
 
 env:
-  
+  BUCKET: www.alleynmurphy.com
   AWS_REGION : "us-west-1" #Change to reflect your Region
-
+  DIST_ID: E3RKI9S7WU1W15
+  DIST: index.html
 # Permission can be added at job level or workflow level    
 permissions:
       id-token: write   # This is required for requesting the JWT
@@ -32,3 +33,7 @@ jobs:
       - name: Sts GetCallerIdentity
         run: |
           aws sts get-caller-identity
+          
+      - name: Copy files to the production website with the AWS CLI
+      run: |
+        aws s3 sync --delete ${{ env.DIST }} s3://${{ env.BUCKET }}
