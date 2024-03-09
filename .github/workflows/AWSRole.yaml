@@ -9,9 +9,9 @@ on:
     branches: [ main ]
 
 env:
-  BUCKET: www.alleynmurphy.com
+  BUCKET: "www.alleynmurphy.com"
   AWS_REGION : "us-west-1" #Change to reflect your Region
-  DIST_ID: E3RKI9S7WU1W15
+  DIST_ID: "E3RKI9S7WU1W15"
   DIST: "."
 
   
