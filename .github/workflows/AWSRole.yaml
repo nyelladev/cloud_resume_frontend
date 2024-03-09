@@ -40,6 +40,6 @@ jobs:
           aws s3 sync --delete --exclude ".git/*" --exclude ".github/*" ${{ env.DIST }} s3://${{ env.BUCKET }} 
       - name: Copy files to the production website with the AWS CLI
         run: |
-        aws cloudfront create-invalidation \
-          --distribution-id ${{ env.DIST_ID }} \
-          --paths "/*"
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.DIST_ID }} \
+            --paths "/*"
